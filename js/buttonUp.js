@@ -1,7 +1,7 @@
 btnUp.onclick = function () {
-  window.scrollTo(pageXOffset, 0);
+  window.scrollTo(scrollX, 0);
 };
 
 window.addEventListener("scroll", function () {
-  btnUp.hidden = pageYOffset < document.documentElement.clientHeight;
+  btnUp.hidden = scrollY < document.documentElement.clientHeight;
 });
