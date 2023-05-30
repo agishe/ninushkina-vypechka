@@ -159,7 +159,7 @@
         </script>
         <br />
       </span>
-      <div class="d-flex justify-content-center" style="display: block;">
+      <div class="d-flex justify-content-center">
         <a class="madeBy" href="https://github.com/agishe">
           Создано - Agishe</a>
       </div>
