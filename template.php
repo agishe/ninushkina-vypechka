@@ -157,7 +157,12 @@
         <script>
           document.write(new Date().getFullYear());
         </script>
+        <br />
       </span>
+      <div class="d-flex justify-content-center" style="display: block;">
+        <a class="madeBy" href="https://github.com/agishe">
+          Создано - Agishe</a>
+      </div>
     </footer>
     <!--=============================== FOOTER END =============================-->
 
