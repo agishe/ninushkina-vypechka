@@ -12,23 +12,22 @@ if ($url[1] == "contacts") {
   $content = file_get_contents("pages/cakes.html");
 } else if ($url[1] == "3d-cakes") {
   $content = file_get_contents("pages/3d-cakes.html");
-} 
-// else if ($url[1] == "cupcakes") {
-//   $content = file_get_contents("pages/cupcakes.html");
-// } else if ($url[1] == "desserts") {
-//   $content = file_get_contents("pages/desserts.html");
-// } 
-else if ($url[1] == "baked_goods") {
+} else if ($url[1] == "baked_goods") {
   $content = file_get_contents("pages/baked_goods.html");
-} 
-// else if ($url[1] == "meat-cakes") {
-//   $content = file_get_contents("pages/meat-cakes.html");
-// } 
-else if ($url[1] == "gingerbreads") {
+} else if ($url[1] == "gingerbreads") {
   $content = file_get_contents("pages/gingerbreads.html");
+} else if ($url[1] == "meat-cakes") {
+  $content = file_get_contents("pages/meat-cakes.html");
 } else {
   $content = file_get_contents("pages/index.html");
 } 
 
 if (!empty($content))
   require_once("template.php");
+
+
+// else if ($url[1] == "cupcakes") {
+//   $content = file_get_contents("pages/cupcakes.html");
+// } else if ($url[1] == "desserts") {
+//   $content = file_get_contents("pages/desserts.html");
+// } 

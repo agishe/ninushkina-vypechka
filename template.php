@@ -19,15 +19,18 @@
       crossorigin="anonymous"></script>
     <link rel="icon" href="/img/icons/favicon.svg" type="image/x-icon" />
     <title>Нинушкина выпечка</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css?<?php echo time();?>" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="css/styles.css?<?php echo time();?>" />
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!--=============================== HEADER START =============================-->
     <header>
       <div class="container">
         <div class="row header_contacts d-flex justify-content-center">
-          <div class="col-lg-3 my-2">
+          <div class="col-lg-2 my-2">
             <a class="number" href="tel:+79263975840">
               <i
                 class="fa-solid fa-phone fa-beat fa-lg"
@@ -35,7 +38,7 @@
               >+79263975840</a
             >
           </div>
-          <div class="col-lg-3 my-2">
+          <div class="col-lg-2 my-2">
             <a href="https://t.me/Nina_U_K"
               ><i
                 class="fa-brands fa-telegram fa-beat fa-xl telegram me-3"
@@ -52,6 +55,7 @@
                 style="color: #259cd8"></i
             ></a>
           </div>
+
           <div class="col-lg-3 my-2">
             <a aria-label="Adress" class="location" href="/contacts"
               >Москва, Молжаниновский р-н</a
@@ -65,7 +69,7 @@
             <img
               class="navbar-brand py-0"
               src="/img/logo/logo.png"
-              style="width: 200px; margin:auto"
+              style="width: 200px; margin: auto"
               alt="Нинушкина выпечка" />
           </a>
           <button
@@ -107,20 +111,20 @@
                       <a class="dropdown-item" href="/desserts">Десерты</a>
                     </li> -->
                   <li>
-                      <a class="dropdown-item" href="/baked_goods">Выпечка</a>
-                    </li>
-                  <!-- <li>
-                      <a class="dropdown-item" href="/meat-cakes"
-                        >Мясные торты</a
-                      >
-                    </li> -->
+                    <a class="dropdown-item" href="/baked_goods">Выпечка</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/meat-cakes">Мясные торты</a>
+                  </li>
                 </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/sales">Акции</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="/payment-and-delivery">Оплата и доставка</a>
+                <a class="nav-link" href="/payment-and-delivery"
+                  >Оплата и доставка</a
+                >
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/contacts">Контакты</a>
@@ -142,12 +146,11 @@
           d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM135.1 217.4c-4.5 4.2-7.1 10.1-7.1 16.3c0 12.3 10 22.3 22.3 22.3H208v96c0 17.7 14.3 32 32 32h32c17.7 0 32-14.3 32-32V256h57.7c12.3 0 22.3-10 22.3-22.3c0-6.2-2.6-12.1-7.1-16.3L269.8 117.5c-3.8-3.5-8.7-5.5-13.8-5.5s-10.1 2-13.8 5.5L135.1 217.4z" />
       </svg>
     </div>
-
-    
+    <script src="/js/buttonUp.js"></script>
     <!--=============================== BUTTON UP END =============================-->
 
     <!--=============================== FOOTER START =============================-->
-    <footer class="mt-1 py-3">
+    <footer class="mt-auto py-3">
       <span class="d-flex justify-content-center text-center">
         Нинушкина Выпечка<br />
         &copy;
@@ -156,7 +159,6 @@
         </script>
       </span>
     </footer>
-    <script src="/js/buttonUp.js"></script>
     <!--=============================== FOOTER END =============================-->
 
     <!-- Bootstrap script start -->
