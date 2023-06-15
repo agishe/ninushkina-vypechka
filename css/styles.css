@@ -1,6 +1,6 @@
 /*** template.php start ***/
 body {
-  background-color: #f9eeff77;
+  background-color: #ebe0f1ea;
   font-family: "Comfortaa";
   color: #6d2e46;
 }
@@ -11,6 +11,17 @@ body {
   color: #6d2e46;
   text-decoration: none;
   font-size: 1.2rem;
+}
+.btnCallback {
+  background-color: #6d2e46;
+  color: white;
+  font-size: 1rem;
+  padding: 5px 10px;
+  border-radius: 30px;
+}
+.btnCallback:hover {
+  background-color: #6d2e46c9;
+  color: white;
 }
 .location {
   color: #6d2e46;
@@ -36,6 +47,168 @@ footer {
   color: #6d2e46;
   text-decoration: none;
 }
+/* callback start */
+.form-wrapper {
+  width: 100%;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contact-form {
+  width: 100%;
+  padding: 10px;
+}
+.contact-form__message {
+  text-align: center;
+}
+.contact-form__input_name {
+  height: 50px;
+  border: 1px solid #6d2e46;
+  border-radius: 5px;
+  width: 100%;
+  background: url("/img/icons/user.svg") center left 15px no-repeat;
+  background-size: 30px;
+  margin-bottom: 20px;
+  padding: 0 15px 0 59px;
+  font: 16px "Roboto", sans-serif;
+  color: #6d2e46;
+  transition: 0.3s;
+}
+.contact-form__input_name:focus {
+  transition: 0.3s;
+  border: 1px solid rgba(255, 241, 198, 0.2);
+}
+.contact-form__input_phone {
+  height: 50px;
+  border: 1px solid #6d2e46;
+  border-radius: 5px;
+  width: 100%;
+  background: url("/img/icons/tel.svg") center left 15px no-repeat;
+  background-size: 30px;
+  margin-bottom: 20px;
+  padding: 0 15px 0 59px;
+  font: 16px "Roboto", sans-serif;
+  color: #6d2e46;
+  transition: 0.3s;
+}
+.contact-form__input_phone:focus {
+  transition: 0.3s;
+  border: 1px solid rgba(255, 241, 198, 0.2);
+}
+.contact-form__input_file {
+  display: none;
+}
+.contact-form__file-button {
+  display: flex;
+  align-items: center;
+  height: 50px;
+  border: 1px solid #6d2e46;
+  border-radius: 5px;
+  width: 100%;
+  background: url("/img/icons/file.svg") center left 15px no-repeat, #1c1e21;
+  background-size: 30px;
+  margin-bottom: 20px;
+  padding: 0 15px 0 59px;
+  font: 16px "Roboto", sans-serif;
+  color: #757575;
+  cursor: pointer;
+}
+.contact-form__button {
+  background: #6d2e46;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  border: none;
+  width: 100%;
+  max-width: 200px;
+  margin: 0 auto;
+  font: 16px "Roboto", sans-serif;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.contact-form__button:hover {
+  transition: 0.3s;
+  background: #6d2e46c7;
+  color: #fff;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.3);
+}
+.preloader {
+  position: relative;
+  margin: 0 0 0 45%;
+  height: 15px;
+  visibility: hidden;
+  opacity: 0;
+  display: none;
+  transition: 0.3s;
+}
+.preloader_active {
+  display: block;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.3s;
+}
+.preloader:before {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  background: #393e46;
+  animation: preloader_before 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+.preloader:after {
+  width: 12px;
+  height: 12px;
+  left: 15%;
+  border-radius: 50%;
+  content: "";
+  position: absolute;
+  background: #5f646c;
+  animation: preloader_after 1.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+}
+@keyframes preloader_before {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(160px) scale(1.5) rotate(264deg);
+    background: #00adb5;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateX(0px) rotate(0deg);
+  }
+}
+@keyframes preloader_after {
+  0% {
+    transform: translateX(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateX(-160px) scale(1.5) rotate(-264deg);
+    background: #00fff5;
+    border-radius: 0;
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@media (max-width: 768px) {
+  .form-wrapper {
+    padding: 15px;
+  }
+}
+@media (max-width: 480px) {
+  .contact-form {
+    padding: 30px 15px;
+  }
+  .contact-form__title {
+    font-size: 16px;
+  }
+}
+/* callback end */
 /*** template.php end ***/
 
 /*** pages/index.html start ***/
@@ -49,7 +222,7 @@ footer {
 .img-left {
   height: 600px;
   object-fit: cover;
-  max-width: 100%;
+  width: 100%;
   border-radius: 5px;
 }
 .carousel-name {
@@ -59,10 +232,12 @@ footer {
   margin: auto;
   overflow: hidden;
 }
-.image-right {
-  height: 340px;
-  object-fit: cover;
-  border-radius: 0.3rem;
+.about {
+  text-indent: 40px;
+  text-align: justify;
+  padding: 0 20px;
+  margin: auto;
+  font-size: 18px;
 }
 .news-item {
   background-color: #e4befa67;
@@ -98,6 +273,15 @@ hr {
   height: 70%;
 }
 /*** pages/contacts.html end ***/
+
+/*** pages/booklet.html start ***/
+.booklet {
+  text-indent: 40px;
+  text-align: justify;
+  padding: 0 20px;
+  font-size: 20px;
+}
+/*** pages/booklet.html end ***/
 
 .card-image {
   height: 400px;
@@ -155,10 +339,8 @@ hr {
   }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
-  .image-right {
-    height: 295px;
-    object-fit: cover;
-    border-radius: 0.3rem;
+  .col-size {
+    height: 100%;
   }
   #btnUp {
     width: 80px;
@@ -170,13 +352,12 @@ hr {
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
-  .card-image {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-  }
   .col-size {
     width: 100%;
+    height: 100%;
+  }
+  .col-right {
+    margin-top: 30px;
   }
   #btnUp {
     width: 80px;
@@ -188,16 +369,16 @@ hr {
   }
 }
 @media (max-width: 767px) {
-  .info {
-    height: 100%;
-  }
   .img-left {
     height: 500px;
     object-fit: cover;
     width: 100%;
   }
+  .col-size {
+    height: 100%;
+  }
   .col-right {
-    margin-top: -90px;
+    margin-top: 30px;
   }
   #btnUp {
     width: 80px;
@@ -209,39 +390,10 @@ hr {
   }
 }
 @media (max-width: 480px) {
-  .info {
-    height: 100%;
-  }
-  .col-right {
-    margin-top: -180px;
-  }
   .img-left {
     height: 400px;
     object-fit: cover;
     width: 100%;
-  }
-  .image-right {
-    height: 270px;
-  }
-  #btnUp {
-    width: 60px;
-    height: 60px;
-  }
-  #btnUp::before {
-    width: 60px;
-    height: 60px;
-  }
-}
-@media (max-width: 410px) {
-  .info {
-    height: 100%;
-  }
-  .img-left {
-    width: 100%;
-    height: 400px;
-  }
-  .image-right {
-    height: 200px;
   }
   #btnUp {
     width: 60px;
@@ -253,11 +405,8 @@ hr {
   }
 }
 @media (max-width: 362px) {
-  .info {
-    height: 100%;
-  }
   .col-left {
-    height: 500px;
+    height: 300px;
   }
   .img-left {
     height: 300px;
@@ -265,16 +414,5 @@ hr {
   .card-image {
     width: 100%;
     object-fit: cover;
-  }
-}
-@media (max-width: 314px) {
-  .img-left {
-    height: 250px;
-  }
-  .col-right {
-    margin-top: -220px !important;
-  }
-  .image-right {
-    height: 150px;
   }
 }

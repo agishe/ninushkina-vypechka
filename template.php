@@ -9,14 +9,12 @@
       rel="stylesheet"
       integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
       crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/1d6ad22d2e.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap"
       rel="stylesheet" />
-    <script
-      src="https://kit.fontawesome.com/1d6ad22d2e.js"
-      crossorigin="anonymous"></script>
     <link rel="icon" href="/img/icons/favicon.svg" type="image/x-icon" />
     <title>Нинушкина выпечка</title>
     <link
@@ -54,11 +52,19 @@
                 class="fa-brands fa-vk fa-beat fa-xl"
                 style="color: #259cd8"></i
             ></a>
+          </div> 
+          <div class="col-lg-2 my-1">
+            <button
+              type="button"
+              class="btn btnCallback"
+              data-bs-toggle="modal"
+              data-bs-target="#callbackModal">
+              Заказать звонок
+            </button>
           </div>
-
           <div class="col-lg-3 my-2">
             <a aria-label="Adress" class="location" href="/contacts"
-              >Москва, Молжаниновский р-н</a
+              ><i class="fa-regular fa-compass" style="color: #6d2e46;"></i> Москва, Молжаниновский р-н</a
             >
           </div>
         </div>
@@ -127,6 +133,9 @@
                 >
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="/booklet">Памятка</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="/contacts">Контакты</a>
               </li>
             </ul>
@@ -166,11 +175,121 @@
     </footer>
     <!--=============================== FOOTER END =============================-->
 
+        <!--=============================== MODAL START =============================-->
+    <div
+      class="modal fade"
+      id="callbackModal"
+      tabindex="-1"
+      aria-labelledby="callbackModalLabel"
+      aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-3" id="callbackModalLabel">
+              Заказать звонок
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Закрыть"></button>
+          </div>
+          <form
+            id="form-contact"
+            method="POST"
+            class="contact-form"
+            autocomplete="off"
+            enctype="multipart/form-data">
+            <div class="modal-body">
+              <div class="preloader"></div>
+              <p class="contact-form__message"></p>
+
+              <!-- Поле с именем -->
+              <div
+                class="contact-form__input-wrapper contact-form__input-wrapper_name">
+                <input
+                  name="name"
+                  type="text"
+                  class="contact-form__input contact-form__input_name"
+                  placeholder="Введите ваше имя" />
+              </div>
+
+              <!-- Поле с телефоном -->
+              <div
+                class="contact-form__input-wrapper contact-form__input-wrapper_phone">
+                <input
+                  name="phone"
+                  type="tel"
+                  class="contact-form__input contact-form__input_phone"
+                  placeholder="Введите ваш телефон" />
+              </div>
+
+              <!-- Поле с темой в письме -->
+              <input
+                name="theme"
+                type="hidden"
+                class="contact-form__input contact-form__input_theme"
+                value="Заявка с сайта ninushkina-vypechka.ru" />
+            </div>
+
+            <div class="modal-footer">
+              <button
+                type="submit"
+                class="btn btn-primary contact-form__button">
+                Отправить
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/telegramform.js"></script>
+
+    <!-- Маска ввода номера телефона -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.15/jquery.mask.min.js"></script>
+    <script>
+      $(function () {
+        $('input[type="tel"]').mask("+7(000)000-00-00");
+      });
+    </script>
+    <!--=============================== MODAL END =============================-->
+
     <!-- Bootstrap script start -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
       crossorigin="anonymous"></script>
     <!-- Bootstrap script end -->
+
+    <!-- Yandex.Metrika counter START -->
+    <script type="text/javascript" >
+      (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+      (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+      ym(93829545, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true,
+            trackHash:true
+      });
+    </script>
+    <noscript><div><img src="https://mc.yandex.ru/watch/93829545" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+    <!-- /Yandex.Metrika counter END -->
+
+    <!-- Google tag (gtag.js) START -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LLCB42RWEW"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LLCB42RWEW');
+    </script>
+    <!-- Google tag (gtag.js) END -->
   </body>
 </html>

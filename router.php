@@ -18,11 +18,11 @@ if ($url[1] == "contacts") {
   $content = file_get_contents("pages/gingerbreads.html");
 } else if ($url[1] == "meat-cakes") {
   $content = file_get_contents("pages/meat-cakes.html");
+} else if ($url[1] == "booklet") {
+  $content = file_get_contents("pages/booklet.html");
 } else {
   $content = file_get_contents("pages/index.html");
-} 
-
-if (!empty($content))
+} if (!empty($content))
   require_once("template.php");
 
 
