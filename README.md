@@ -18,28 +18,52 @@
 
 Страницы веб проекта адаптивны и могут открываться на разных устройствах с разным разрешением экрана.
 
-
+<br />
 
 <h2 align="center">Описание этапов разработки, описание функционала с приложением листингов исходного программного кода основной функции, структурных модулей, пример кода-разметки</h2>
 
+<br />
+
 Этап разработки начинался с создания шаблона с общим HTML-кодом (далее “лейаут”) и с использованием фреймворка Bootstrap ver 5.3 (далее “фреймворк”).
 
+<br />
+
+```ruby
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous" />
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+```
 Листинг 1.
+
+<br />
 
 Веб ресурс создавался с использованием системы сеток фреймворка “Container”, а также дополнительных готовых компонентов фреймворка. 
 В лейауте подключаются стили, метатеги, шапка и подвал сайта, а также вставка контента сайта с помощью PHP-кода.
+
+<br />
+
+```ruby
 <?php echo $content; ?>
+```
 Листинг 2.
+
+<br />
+
 Также в лейауте находится ссылка на скрипт с кодом кнопки прокрутки страницы вверх, реализованная с помощь JavaScript. Кнопка отображается на всех страницах веб ресурса.
+```ruby
 btnUp.onclick = function () {window.scrollTo(scrollX, 0);};
 window.addEventListener("scroll", function () {
   btnUp.hidden = scrollY < document.documentElement.clientHeight;
 });
+```
 Листинг 3.
 
+<br />
+
 Создается маршрутизатор в котором прописываются пути к контенту сайта и лейауту.
+
+<br />
+
+```ruby
 <?php
   $url = explode("/", $_SERVER['REQUEST_URI']);
   if ($url[1] == "contacts") {
@@ -61,9 +85,16 @@ window.addEventListener("scroll", function () {
   } 
   if (!empty($content))
     require_once("template.php");
+```
 Листинг 4.
 
+<br />
+
 Создается файл дополнительной конфигурации веб-сервера Apache.
+
+<br />
+
+```ruby
 RewriteEngine on
 
 RewriteCond %{SERVER_PORT} !^443$
@@ -72,20 +103,16 @@ RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R=301,L]
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ router.php [L,QSA]
+```
 Листинг 5.
 
-В проект веб ресурса входят:
-- файл главной страницы в формате php,
-- шаблон с общим HTML-кодом (далее “лейаут”) в формате php в корне проекта,
-- маршрутизатор в формате php в корне проекта,
-- 11 страниц в формате html в папке pages,
-- файл дополнительной конфигурации веб-сервера Apache (.htaccess) в корне проекта,
-- папка img с изображениями,
-- папка css с стилями веб-сайта,
-- папка js с кодом на JavaScript.
-Страницы веб проекта адаптивны и могут открываться на разных устройствах с разным разрешением экрана.
+<br />
 
-При переходе по адресу https://malvino.p-host.in/ пользователь попадает на главную страницу сайта, на которой в шапке указаны номер, социальные сети для связи и адрес, также расположены логотип и меню для перехода на другие страницы веб ресурса.
+При переходе по адресу https://ninushkina-vypechka.ru пользователь попадает на главную страницу сайта, на которой в шапке указаны номер, социальные сети для связи и адрес, также расположены логотип и меню для перехода на другие страницы веб ресурса.
+
+<br />
+
+```ruby
 <header>
   <div class="container">
     <div class="row header_contacts d-flex justify-content-center">
@@ -152,13 +179,21 @@ RewriteRule ^(.*)$ router.php [L,QSA]
     </div>
   </nav>
 </header>
+```
 Листинг 6.
+
+<br />
 
 На главной странице расположены блоки с изображениями тортов, информацией о кондитере и новостей сайта.
 В подвале веб ресурса реализована автоматическая смена отображаемого года с помощью JavaScript.
+
+<br />
+
+```ruby
 <script>
   document.write(new Date().getFullYear());
 </script>
+```
 Листинг 7.
 
 При нажатии на кнопку «Каталог», появляется выпадающий список страниц с кондитерскими изделиями. На страницах каталога представлена информация о тортах и других изделиях в виде информационных карточек, реализованная с помощью фреймворка и свойств стилей CSS.
