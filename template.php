@@ -120,17 +120,32 @@
                     <a class="dropdown-item" href="/baked_goods">Выпечка</a>
                   </li>
                   <li>
-                    <a class="dropdown-item" href="/meat-cakes">Мясные торты</a>
+                    <a class="dropdown-item" href="/meat-cakes">Антиторты</a>
                   </li>
                 </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="/sales">Акции</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/payment-and-delivery"
                   >Оплата и доставка</a
                 >
+              </li>
+              <li class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false">
+                  Информация
+                </a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="/sales">Акции</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="/biscuits-and-fillers">Бисквиты и начинки</a>
+                  </li>
+                </ul>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="/booklet">Памятка</a>
